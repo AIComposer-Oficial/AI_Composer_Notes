@@ -1,12 +1,5 @@
 package com.example.ai_composer_notes;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.databinding.DataBindingUtil;
-
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -15,8 +8,14 @@ import android.util.Log;
 import android.webkit.PermissionRequest;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
 
 import com.example.ai_composer_notes.databinding.ActivityMainBinding;
 
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mBinding.webview.loadUrl("<your url");
+        mBinding.webview.loadUrl("file:///android_asset/index.html");
     }
 
     @Override
@@ -86,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
                     myRequest.grant(myRequest.getResources());
-                    mBinding.webview.loadUrl("<your url>");
+                    mBinding.webview.loadUrl("file:///android_asset/index.html");
 
                 } else {
 
